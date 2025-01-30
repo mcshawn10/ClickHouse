@@ -85,7 +85,7 @@ const std::unordered_map<String, CHSetting> s3QueueTableSettings = {
      CHSetting(
          [](RandomGenerator & rg)
          {
-             const DB::Strings & choices = {"''", "'keep'", "'delete'"};
+             const DB::Strings & choices = {"''", "'keep'", "'delete'", "'move'", "'tag'"}; // here will add "move", "tag"
              return rg.pickRandomlyFromVector(choices);
          },
          {},

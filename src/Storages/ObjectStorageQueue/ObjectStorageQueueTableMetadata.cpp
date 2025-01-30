@@ -97,6 +97,10 @@ ObjectStorageQueueAction ObjectStorageQueueTableMetadata::actionFromString(const
         return ObjectStorageQueueAction::KEEP;
     if (action == "delete")
         return ObjectStorageQueueAction::DELETE;
+    if (action == "move")
+        return ObjectStorageQueueAction::KEEP;
+    if (action == "tag")
+        return ObjectStorageQueueAction::DELETE;
     throw Exception(ErrorCodes::BAD_ARGUMENTS, "Unexpected ObjectStorageQueue action: {}", action);
 }
 
@@ -108,6 +112,10 @@ std::string ObjectStorageQueueTableMetadata::actionToString(ObjectStorageQueueAc
             return "delete";
         case ObjectStorageQueueAction::KEEP:
             return "keep";
+        case ObjectStorageQueueAction::MOVE:
+            return "move";
+        case ObjectStorageQueueAction::TAG:
+            return "tag";
     }
 }
 

@@ -334,7 +334,9 @@ DECLARE_SETTING_ENUM(ObjectStorageQueueMode)
 enum class ObjectStorageQueueAction : uint8_t
 {
     KEEP,
-    DELETE,
+    DELETE, // here will add "move", "tag"
+    MOVE,
+    TAG
 };
 
 DECLARE_SETTING_ENUM(ObjectStorageQueueAction)

@@ -98,9 +98,9 @@ ObjectStorageQueueAction ObjectStorageQueueTableMetadata::actionFromString(const
     if (action == "delete")
         return ObjectStorageQueueAction::DELETE;
     if (action == "move")
-        return ObjectStorageQueueAction::KEEP;
+        return ObjectStorageQueueAction::MOVE;
     if (action == "tag")
-        return ObjectStorageQueueAction::DELETE;
+        return ObjectStorageQueueAction::TAG;
     throw Exception(ErrorCodes::BAD_ARGUMENTS, "Unexpected ObjectStorageQueue action: {}", action);
 }
 
